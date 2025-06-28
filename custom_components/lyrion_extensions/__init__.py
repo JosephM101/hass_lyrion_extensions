@@ -23,5 +23,5 @@ CONFIG_SCHEMA = vol.Schema(
 async def async_setup(hass: core.HomeAssistant, config: dict) -> bool:
     """Set up the Squeezebox Extensions component"""
     from . import intent
-    await intent.async_setup_intents(hass)
+    await intent.async_setup(hass, config)
     return True
