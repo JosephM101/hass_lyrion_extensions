@@ -1,8 +1,8 @@
 from homeassistant import core
 import voluptuous as vol
 import homeassistant.helpers.config_validation as cv
+from .const import DOMAIN
 
-DOMAIN = "squeezebox_extensions"
 CONF_LMS_SERVER_HOST = "lms_host"
 CONF_LMS_SERVER_USERNAME = "lms_username"
 CONF_LMS_SERVER_PASSWORD = "lms_password"
