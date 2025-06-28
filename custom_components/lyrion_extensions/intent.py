@@ -6,7 +6,7 @@ from .const import DOMAIN
 DATA_KEY = "counting_test" # change later
 
 
-async def async_setup_intent(hass, config):
+async def async_setup_intents(hass, config):
     hass.data[DATA_KEY] = 0
     intent.async_register(hass, SqueezeboxPlayIntent())
 
