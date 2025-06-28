@@ -2,6 +2,8 @@ import logging
 from homeassistant.helpers import intent
 from homeassistant.core import callback
 from .const import DOMAIN
+import voluptuous as vol
+import homeassistant.helpers.config_validation as cv
 
 DATA_KEY = "counting_test" # change later
 
@@ -16,6 +18,11 @@ class SqueezeboxPlayIntent(intent.IntentHandler):
 
     intent_type = "SqueezeboxPlayIntent"
     description = "Command one or more Squeezebox players to search for and play a song from the LMS library"
+
+    slot_schema = {
+        "songtitle": str,
+        "area": str,
+    }
 
     async def async_handle(self, intent_obj):
         """Handle the intent."""
@@ -36,6 +43,10 @@ class SqueezeboxPlayIntent(intent.IntentHandler):
             - Respond with "Okay. Playing {title} by {artist} [in the {area}]."
         """
 
+        slots = intent_obj.slots
+        song = slots["songtitle"]["value"]
+        area = slots.get("area", {}).get("value")
+        
         intent_obj.hass.data[DATA_KEY] += 1
         count = intent_obj.hass.data[DATA_KEY]
 
