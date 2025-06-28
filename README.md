@@ -1,7 +1,7 @@
 # LMS/Squeezebox Extensions for Home Assistant (WIP)
 
 ### "OK Nabu, play my favorite songs"
-`lyrion-extensions` is a (WIP) custom component for Home Assistant that adds intents for voice-activated music playback on Squeezebox-compatible devices
+`lyrion_extensions` is a (WIP) custom component for Home Assistant that adds intents for voice-activated music playback on Squeezebox-compatible devices
 
 ## Installation
 HACS (WIP)
